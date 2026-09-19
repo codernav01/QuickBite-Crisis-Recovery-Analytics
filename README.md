@@ -129,8 +129,9 @@ The full QuickBite analysis includes business-understanding, domain-research, st
 ```text
 QuickBite-Crisis-Recovery-Analytics/
 ├── README.md
-├── QuickBite_BI_SQL_Analytics.sql
-├── Capstone end to end data analytics project 102.ipynb
+├── quickbite_crisis_analysis.ipynb
+├── sql/
+│   └── quickbite_bi_analytics.sql
 ├── assets/
 │   └── quickbite-executive-summary.svg
 └── source CSV datasets
