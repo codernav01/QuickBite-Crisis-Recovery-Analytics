@@ -1,254 +1,140 @@
-# QuickBite Express — Crisis Recovery & Business Intelligence Analytics
+# QuickBite Express — Crisis Recovery Analytics
 
-## 📌 Project Overview
+> End-to-end analytics case study using Python and MySQL/SQL to diagnose a food-delivery business crisis and translate the findings into recovery priorities.
 
-**QuickBite Express — Crisis Recovery & Business Intelligence Analytics** is an end-to-end **Data Analytics & Business Intelligence project** focused on analyzing the impact of a major business crisis on a food-delivery platform.
+## Executive Summary
 
-The project analyzes QuickBite's business performance across **January–September 2025**, using **January–May 2025 as the Pre-Crisis baseline** and **June–September 2025 as the Crisis period**.
+QuickBite Express experienced a major disruption beginning in **June 2025**. This project compares the **pre-crisis period (January–May 2025)** with the **crisis period (June–September 2025)** across eight relational datasets covering customers, restaurants, orders, order items, delivery performance, and ratings.
 
-The analysis transforms raw customer, restaurant, order, delivery, and rating data into **validated, analysis-ready datasets**, performs exploratory and business analysis using **Python**, and develops a structured **SQL analytics layer** for deeper analysis and reporting.
+The analysis shows that the problem was broader than a simple demand decline. Customer activity, order value, delivery reliability, ratings, and retention signals all deteriorated during the crisis period.
 
-The core focus is on understanding **demand decline, operational deterioration, customer experience, restaurant partner performance, customer value risk, and recovery priorities**.
+| KPI | Change |
+|---|---:|
+| Orders | **-69.78%** |
+| Order value | **-70.92%** |
+| Active customers | **-63.56%** |
+| Average delivery time | **+52.09%** |
+| SLA breach rate | **+31.33 percentage points** |
+| Average customer rating | **-43.77%** |
+| Cancellation rate | **3.40% → 6.87%** |
 
----
+## Business Questions
 
-## 🎯 Project Objectives
+- How large was the decline in demand and order value?
+- Which customer, city, and restaurant segments were most affected?
+- How did delivery time, SLA performance, and cancellations change?
+- Did customer ratings deteriorate during the same period?
+- Which historically valuable customers reduced activity?
+- Which recovery actions should management prioritize?
 
-The project aims to:
+## Data Model
 
-- Analyze the overall business impact of the June 2025 crisis
-- Compare Pre-Crisis and Crisis performance across key business metrics
-- Identify changes in customer demand and ordering behavior
-- Analyze city-level and restaurant-level order decline
-- Evaluate delivery performance, cancellations, and SLA compliance
-- Analyze customer ratings and review-based feedback
-- Identify high-value and loyal customers at risk
-- Analyze restaurant partner performance and recovery priorities
-- Build a reusable SQL analytics layer for business reporting
-- Convert analytical findings into actionable recovery recommendations
-
----
-
-## 📂 Datasets Used
-
-The project uses **8 relational datasets** covering the major components of the QuickBite business ecosystem.
-
-| Dataset | Description |
+| Dataset | Purpose / grain |
 |---|---|
-| **dim_customer.csv** | Customer master and profile information |
-| **dim_delivery_partner_.csv** | Delivery partner information |
-| **dim_menu_item.csv** | Menu item and restaurant-level product information |
-| **dim_restaurant.csv** | Restaurant and partner information |
-| **fact_orders.csv** | Customer order transactions and order-value data |
-| **fact_order_items.csv** | Order-level item and basket information |
-| **fact_delivery_performance.csv** | Delivery time, delay, SLA and delivery performance |
-| **fact_ratings.csv** | Customer ratings, reviews and feedback |
+| `dim_customer.csv` | One row per customer |
+| `dim_delivery_partner_.csv` | One row per delivery partner |
+| `dim_restaurant.csv` | One row per restaurant |
+| `dim_menu_item.csv` | One row per menu item |
+| `fact_orders.csv` | One row per order |
+| `fact_order_items.csv` | Order-item level detail |
+| `fact_delivery_performance.csv` | Delivery metrics by order |
+| `fact_ratings.csv` | Rating / review records |
 
-## 🛠️ Technology Stack
-
-| Category | Tools |
-|---|---|
-| **Programming Language** | Python |
-| **Data Analysis** | Pandas, NumPy |
-| **Data Visualization** | Matplotlib, Seaborn |
-| **Database / Analytics** | MySQL / SQL |
-| **Business Intelligence** | Power BI |
-| **Development Environment** | Jupyter Notebook |
-| **Version Control** | Git, GitHub |
-| **Data Formats** | CSV, Excel |
-
----
-
-## ⚙️ Project Workflow
-
-The project follows a structured end-to-end analytics pipeline:
+## Analytical Workflow
 
 ```text
-Raw Business Data
-        ↓
-Data Loading & Inspection
-        ↓
-Python Data Cleaning & Validation
-        ↓
-Data Quality & Integrity Checks
-        ↓
-Feature Engineering
-        ↓
-Exploratory Data Analysis
-        ↓
-Business Question Analysis
-        ↓
-MySQL Database & Validation
-        ↓
-SQL Analytics Layer
-        ↓
-Power BI / Executive Reporting
-        ↓
-Business Insights & Recovery Recommendations
+Raw relational data
+      ↓
+Python inspection and cleaning
+      ↓
+Data-quality and integrity validation
+      ↓
+Feature engineering and EDA
+      ↓
+MySQL relational validation
+      ↓
+Reusable SQL analytics layer
+      ↓
+KPI and segment analysis
+      ↓
+Business diagnosis
+      ↓
+Recovery priorities
 ```
-## 📊 Key Findings
 
-The analysis identified a broad-based deterioration across multiple areas of the business:
+## Data Quality Work
 
-- **Orders declined by 69.78%**
-- **Order value declined by 70.92%**
-- **Active customers declined by 63.56%**
-- **Average delivery time increased by 52.09%**
-- **SLA breach rate increased by 31.33 percentage points**
-- **Average customer rating declined by 43.77%**
-- **Cancellation rate increased from 3.40% to 6.87%**
-- **99.24% of identified high-value customers showed declining activity**
+Before KPI analysis, the project checks:
 
-These findings indicate that the crisis was **not simply a demand problem**. The deterioration extended across **operations, customer experience, customer value, and marketplace performance**.
+- table grain and duplicate business keys
+- null and duplicate identifiers
+- orphaned records across joins
+- rating and quantity business rules
+- negative financial / delivery values
+- order-value reconciliation
+- item-level vs order-level subtotal consistency
+- cancelled-order financial consistency
 
----
+## SQL Analytics Layer
 
-## 📈 Business Impact
+The SQL work includes:
 
-The analysis highlights four interconnected areas of business deterioration:
+- schema and index inspection
+- grain validation
+- key-integrity checks
+- relationship validation
+- pre-crisis vs crisis comparisons
+- monthly KPI trends
+- customer activity analysis
+- restaurant and city performance
+- delivery and SLA analysis
+- cancellation analysis
+- ratings analysis
+- high-value customer analysis
+- reusable analytical views
 
-### 📉 Demand
+Techniques include **joins, CTEs, subqueries, CASE expressions, aggregations, date analysis, and window functions**.
 
-A substantial decline in orders and active customers indicates a significant reduction in marketplace activity during the crisis period.
+## Key Findings
 
-### 🚚 Operations
+### Demand and commercial performance
+Orders, active customers, and order value all fell sharply during the crisis period, indicating a broad contraction in marketplace activity.
 
-Higher delivery times, increased SLA breaches, and rising cancellations indicate deterioration in operational reliability.
+### Operations
+Average delivery time increased by **52.09%**, while SLA breaches and cancellations also increased. Operational deterioration therefore accompanied the demand decline.
 
-### ⭐ Customer Experience
+### Customer experience
+Average ratings declined substantially during the same period. This is treated as an experience signal associated with the crisis period, not proof that one metric directly caused another.
 
-The decline in average customer ratings and negative review patterns indicate a significant deterioration in customer experience.
+### Customer value risk
+A large share of customers classified as historically high-value showed reduced activity during the crisis, making retention and service recovery a management priority.
 
-### 💰 Customer & Commercial Value
+## Recovery Priorities
 
-Declining order value and reduced activity among high-value customers create a significant retention and revenue-recovery risk.
+1. **Stabilize operations** — reduce delivery delays, SLA breaches, and cancellations.
+2. **Protect valuable customers** — focus retention efforts on previously loyal / high-value customers whose activity declined.
+3. **Prioritize recovery markets** — identify restaurants and cities contributing most to lost activity.
+4. **Rebuild customer experience** — use ratings and review patterns to locate recurring service issues.
 
----
-
-## 🎯 Recovery Priorities
-
-Based on the analytical findings, the project identifies four major recovery priorities:
-
-### 01 — Stabilize
-
-Improve operational reliability by addressing delivery delays, SLA breaches, and cancellations.
-
-### 02 — Protect
-
-Prioritize retention of high-value and historically loyal customers showing declining activity.
-
-### 03 — Recover
-
-Identify high-impact restaurants and cities requiring focused recovery interventions.
-
-### 04 — Rebuild Trust
-
-Use customer ratings and review feedback to identify recurring experience problems and improve service reliability.
-
----
-
-## 📊 Key Outputs
-
-- Cleaned and analysis-ready datasets
-- Python-based exploratory and business analysis
-- Data quality and integrity validation
-- Validated MySQL analytical database
-- Reusable SQL analytics queries
-- Customer, restaurant, and operational analysis
-- Pre-Crisis vs Crisis comparison
-- City-level demand analysis
-- Restaurant partner performance analysis
-- Delivery and SLA performance analysis
-- Customer ratings and feedback analysis
-- High-value customer risk analysis
-- Power BI / executive reporting outputs
-- Business insights and recovery recommendations
-
----
-
-## 🗄️ SQL Analytics Layer
-
-The project includes a structured SQL analytics layer designed for reusable business reporting and analysis.
-
-The SQL analysis covers:
-
-- Pre-Crisis vs Crisis comparisons
-- Monthly order trends
-- City-level performance
-- Restaurant-level performance
-- Customer activity analysis
-- High-value customer identification
-- Delivery performance
-- SLA breach analysis
-- Cancellation analysis
-- Customer rating analysis
-- Revenue / order-value analysis
-- Business recovery prioritization
-
-Advanced SQL techniques are used where appropriate, including:
-
-- **CTEs**
-- **Subqueries**
-- **Aggregations**
-- **CASE statements**
-- **Window Functions**
-- **Joins**
-- **Date-based analysis**
-
----
-
-The objective is not simply to display KPIs, but to connect operational metrics with **business decisions and recovery actions**.
-## 🎯 Project Outcome
-
-The project demonstrates an end-to-end **Data Analytics & Business Intelligence workflow**:
-
-**Raw Business Data → Python → SQL → Power BI → Business Insights → Recovery Strategy**
-
-It transforms raw QuickBite operational data into **validated, evidence-based insights** covering:
-
-- Demand
-- Customers
-- Restaurants
-- Delivery operations
-- Customer experience
-- Commercial performance
-- Recovery priorities
-
-The project demonstrates how analytics can move beyond descriptive dashboards and support **structured business diagnosis and decision-making** during a crisis.
-
----
-
-## 🔄 End-to-End Analytics Architecture
+## Repository Contents
 
 ```text
-             RAW BUSINESS DATA
-                     │
-                     ▼
-          DATA CLEANING & VALIDATION
-                  (Python)
-                     │
-                     ▼
-          ANALYSIS-READY DATASETS
-                     │
-          ┌──────────┴──────────┐
-          ▼                     ▼
-    EXPLORATORY ANALYSIS    MYSQL DATABASE
-       (Python)                  │
-          │                      ▼
-          │              SQL ANALYTICS LAYER
-          │                      │
-          └──────────┬───────────┘
-                     ▼
-              POWER BI REPORTING
-                     │
-                     ▼
-             BUSINESS INSIGHTS
-                     │
-                     ▼
-          RECOVERY RECOMMENDATIONS
-`menu_item_id`
-
-These relationships allow customer, restaurant, order, delivery, and feedback data to be analyzed together.
+QuickBite-Crisis-Recovery-Analytics/
+├── README.md
+├── QuickBite_BI_SQL_Analytics.sql
+├── Capstone end to end data analytics project 102.ipynb
+└── source CSV datasets
 ```
-## If you found this project useful, consider starring the repository.⭐
----
+
+> The current repository contains the analytical notebook, SQL layer, and source datasets. Power BI or executive-report assets should be added only when the actual files or screenshots are available.
+
+## Tech Stack
+
+**Python:** Pandas, NumPy, Matplotlib, Seaborn  
+**Database:** MySQL  
+**SQL:** joins, CTEs, window functions, validation queries, analytical views  
+**Environment:** Jupyter Notebook, Git, GitHub
+
+## What This Project Demonstrates
+
+**Validate the data → define the comparison → quantify the change → locate the operational problem → identify affected segments → translate findings into decisions.**
