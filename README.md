@@ -2,6 +2,10 @@
 
 > End-to-end analytics case study using Python and MySQL/SQL to diagnose a food-delivery business crisis and translate the findings into recovery priorities.
 
+<p align="center">
+  <img src="assets/quickbite-executive-summary.svg" alt="QuickBite Executive KPI Summary" width="100%">
+</p>
+
 ## Executive Summary
 
 QuickBite Express experienced a major disruption beginning in **June 2025**. This project compares the **pre-crisis period (January–May 2025)** with the **crisis period (June–September 2025)** across eight relational datasets covering customers, restaurants, orders, order items, delivery performance, and ratings.
@@ -116,6 +120,10 @@ A large share of customers classified as historically high-value showed reduced 
 3. **Prioritize recovery markets** — identify restaurants and cities contributing most to lost activity.
 4. **Rebuild customer experience** — use ratings and review patterns to locate recurring service issues.
 
+## Supporting Reports
+
+The full QuickBite analysis includes business-understanding, domain-research, storytelling, executive-presentation and final-executive-report deliverables. The visual above is adapted from the **Executive Decision Summary** in the final report.
+
 ## Repository Contents
 
 ```text
@@ -123,10 +131,12 @@ QuickBite-Crisis-Recovery-Analytics/
 ├── README.md
 ├── QuickBite_BI_SQL_Analytics.sql
 ├── Capstone end to end data analytics project 102.ipynb
+├── assets/
+│   └── quickbite-executive-summary.svg
 └── source CSV datasets
 ```
 
-> The current repository contains the analytical notebook, SQL layer, and source datasets. Power BI or executive-report assets should be added only when the actual files or screenshots are available.
+> The current repository contains the analytical notebook, SQL layer, source datasets, and an executive KPI summary visual. Add the original Power BI / executive-report files or screenshots when available.
 
 ## Tech Stack
 
