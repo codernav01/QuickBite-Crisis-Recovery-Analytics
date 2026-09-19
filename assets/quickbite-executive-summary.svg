@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+  <rect width="1200" height="820" rx="28" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="92" rx="28" fill="#0b1f3a"/>
+  <rect x="0" y="64" width="1200" height="28" fill="#0b1f3a"/>
+  <text x="60" y="52" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#ffffff">QuickBite Express — Executive Decision Summary</text>
+  <text x="60" y="78" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#d9e4f0">Pre-Crisis: Jan–May 2025  •  Crisis: Jun–Sep 2025</text>
+
+  <text x="60" y="140" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0b1f3a">The crisis was a system-wide business shock</text>
+  <text x="60" y="170" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#425466">Demand, commercial performance, operational reliability and customer experience deteriorated together.</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="60" y="220" width="330" height="150" rx="18" fill="#fff4f2" stroke="#efc0b8"/>
+    <text x="86" y="260" font-size="18" font-weight="700" fill="#9f1d1d">ORDERS</text>
+    <text x="86" y="315" font-size="44" font-weight="800" fill="#c62828">−69.78%</text>
+    <text x="86" y="344" font-size="16" fill="#5b6675">110,672  →  33,441</text>
+
+    <rect x="435" y="220" width="330" height="150" rx="18" fill="#fff8ed" stroke="#efd29f"/>
+    <text x="461" y="260" font-size="18" font-weight="700" fill="#9a5a00">ORDER VALUE</text>
+    <text x="461" y="315" font-size="44" font-weight="800" fill="#d97706">−70.92%</text>
+    <text x="461" y="344" font-size="16" fill="#5b6675">₹37.62M  →  ₹10.94M</text>
+
+    <rect x="810" y="220" width="330" height="150" rx="18" fill="#f0f8f2" stroke="#b8d9c1"/>
+    <text x="836" y="260" font-size="18" font-weight="700" fill="#1d6a39">ACTIVE CUSTOMERS</text>
+    <text x="836" y="315" font-size="44" font-weight="800" fill="#2e7d32">−63.56%</text>
+    <text x="836" y="344" font-size="16" fill="#5b6675">83,740  →  30,511</text>
+
+    <rect x="60" y="405" width="330" height="150" rx="18" fill="#eef6ff" stroke="#b8cee8"/>
+    <text x="86" y="445" font-size="18" font-weight="700" fill="#174a7c">AVG DELIVERY TIME</text>
+    <text x="86" y="500" font-size="44" font-weight="800" fill="#2367a5">+52.09%</text>
+    <text x="86" y="529" font-size="16" fill="#5b6675">39.53 min  →  60.11 min</text>
+
+    <rect x="435" y="405" width="330" height="150" rx="18" fill="#f7f2fb" stroke="#d7c2e8"/>
+    <text x="461" y="445" font-size="18" font-weight="700" fill="#5e2b7f">SLA BREACH RATE</text>
+    <text x="461" y="500" font-size="44" font-weight="800" fill="#7b3fa1">+31.33 pp</text>
+    <text x="461" y="529" font-size="16" fill="#5b6675">56.41%  →  87.74%</text>
+
+    <rect x="810" y="405" width="330" height="150" rx="18" fill="#eef8f8" stroke="#b9d7d7"/>
+    <text x="836" y="445" font-size="18" font-weight="700" fill="#17666b">AVERAGE RATING</text>
+    <text x="836" y="500" font-size="44" font-weight="800" fill="#17808a">−43.77%</text>
+    <text x="836" y="529" font-size="16" fill="#5b6675">4.51  →  2.54</text>
+  </g>
+
+  <rect x="60" y="605" width="1080" height="82" rx="16" fill="#0b1f3a"/>
+  <text x="90" y="637" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">EXECUTIVE INTERPRETATION</text>
+  <text x="90" y="667" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff">This was not an order-volume problem alone; operations, customer experience and commercial value weakened simultaneously.</text>
+
+  <rect x="60" y="710" width="1080" height="70" rx="16" fill="#f7f8fa" stroke="#d9dee5"/>
+  <text x="90" y="742" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#c62828">MANAGEMENT PRIORITY</text>
+  <text x="90" y="768" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0b1f3a">Stabilize the operating experience before aggressively accelerating demand recovery.</text>
+</svg>
